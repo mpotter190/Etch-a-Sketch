@@ -1,17 +1,15 @@
 body {
     display: flex;
-    font-family: roboto;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-#row {
-    display: flex;
+    justify-content: center;
 }
 
 
-#box {
-    border: 3px solid black;
-    height: 100px;
-    width: 100px;
+.board {
+    height: 500px;
+    width: 500px;
+    display: grid;
+}
+
+button {
+    margin: 8px 8px;
 }
