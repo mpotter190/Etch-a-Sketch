@@ -8,9 +8,23 @@ function populateBoard(size) {
   let amount = size*size;
   for (let i=0; i<amount; i++) {
       let square = document.createElement('div');
+      let brightness = 1;
       square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'black';
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        
+        square.style.backgroundColor = `${color}`;
       })
+
+      square.addEventListener('mouseover', () =>{
+        brightness -= 0.1; // Adjust this value for the darkening amount
+        if (brightness < 0) brightness = 0;
+          square.style.filter = `brightness(${brightness})`;
+      })
+
       square.style.backgroundColor = 'blue';
       board.insertAdjacentElement('beforeend', square);
   }
